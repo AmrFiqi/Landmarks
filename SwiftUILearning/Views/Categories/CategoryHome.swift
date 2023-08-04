@@ -16,7 +16,7 @@ struct CategoryHome: View {
                     
                 }
             }
-                .navigationTitle("Featured")
+            .navigationTitle("Featured")
         }
         
     }
