@@ -9,12 +9,14 @@ import SwiftUI
 
 struct PageView<Page: View>: View {
     var pages: [Page]
-    @State private var currnetPage = 0
+    @State private var currentPage = 0
     
     var body: some View {
-        VStack {
-            PageViewController(pages: pages, currnetPage: $currnetPage)
-            Text("Current page: \(currnetPage)")
+        ZStack(alignment: .bottomTrailing) {
+            PageViewController(pages: pages, currentPage: $currentPage)
+            PageControl(numberOfPages: pages.count, currentPage: $currentPage)
+                .frame(width: CGFloat(pages.count * 18))
+                .padding(.trailing)
         }
         
     }
@@ -24,7 +26,7 @@ struct PageView_Previews: PreviewProvider {
     static var previews: some View {
         PageView(pages: ModelData().features.map {
             FeatureCard(landmark: $0)
-                .aspectRatio(3 / 2, contentMode: .fit)
         })
+        .aspectRatio(3/2,contentMode: .fit)
     }
 }

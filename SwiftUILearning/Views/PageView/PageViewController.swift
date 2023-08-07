@@ -11,7 +11,7 @@ import UIKit
 struct PageViewController<Page: View> :UIViewControllerRepresentable {
     
     var pages: [Page]
-    @Binding var currnetPage: Int
+    @Binding var currentPage: Int
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -25,7 +25,7 @@ struct PageViewController<Page: View> :UIViewControllerRepresentable {
     }
     
     func updateUIViewController(_ pageViewController: UIViewControllerType, context: Context) {
-        pageViewController.setViewControllers([context.coordinator.controllers[currnetPage]], direction: .forward, animated: true)
+        pageViewController.setViewControllers([context.coordinator.controllers[currentPage]], direction: .forward, animated: true)
     }
     
     // MARK: - Coordinator Class
@@ -70,10 +70,8 @@ struct PageViewController<Page: View> :UIViewControllerRepresentable {
             if completed,
                 let visibleViewController = pageViewController.viewControllers?.first,
                     let index = controllers.firstIndex(of: visibleViewController) {
-                        parent.currnetPage = index
+                        parent.currentPage = index
                     }
             }
         }
     }
-    
-}
