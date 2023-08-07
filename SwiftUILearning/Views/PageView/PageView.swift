@@ -9,8 +9,14 @@ import SwiftUI
 
 struct PageView<Page: View>: View {
     var pages: [Page]
+    @State private var currnetPage = 0
+    
     var body: some View {
-        PageViewController(pages: pages)
+        VStack {
+            PageViewController(pages: pages, currnetPage: $currnetPage)
+            Text("Current page: \(currnetPage)")
+        }
+        
     }
 }
 
