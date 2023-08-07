@@ -19,7 +19,7 @@ The SwiftUILearning Landmark App is a delightful iOS app showcasing a collection
 
 ## Demo / Screenshots
 
-![Landmark App Demo](https://github.com/AmrFiqi/Landmarks/blob/main/Landmark.gif)
+![Landmark App Demo](https://github.com/AmrFiqi/Landmarks/blob/main/LandmarkFinished.gif)
 
 ## Installation
 
